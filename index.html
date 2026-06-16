@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0067)file:///C:/Users/richard.tapia/Downloads/foh_daily_schedule_12.html -->
+<!-- saved from url=(0067)file:///C:/Users/richard.tapia/Downloads/foh_daily_schedule_13.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>FOH Daily Schedule</title>
@@ -7,20 +7,232 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background: #e8e8e6;
   font-size: 11px;
   color: #1a1a1a;
 }
 
+/* hide all checkbox inputs */
+.del-cb, .add-cb { display: none; }
+
+/* CSS checkbox hack rules */
+#del-mgr-r0:checked ~ table tbody #row-mgr-r0 { display: none; }
+#del-mgr-r1:checked ~ table tbody #row-mgr-r1 { display: none; }
+#del-mgr-r2:checked ~ table tbody #row-mgr-r2 { display: none; }
+#del-mgr-r3:checked ~ table tbody #row-mgr-r3 { display: none; }
+#del-mgr-r4:checked ~ table tbody #row-mgr-r4 { display: none; }
+#add-mgr-e0:checked ~ table tbody #row-mgr-r2 { display: table-row; }
+#add-mgr-e1:checked ~ table tbody #row-mgr-r3 { display: table-row; }
+#add-mgr-e2:checked ~ table tbody #row-mgr-r4 { display: table-row; }
+#row-mgr-r2 { display: none; }
+#row-mgr-r3 { display: none; }
+#row-mgr-r4 { display: none; }
+#del-lead-r0:checked ~ table tbody #row-lead-r0 { display: none; }
+#del-lead-r1:checked ~ table tbody #row-lead-r1 { display: none; }
+#del-lead-r2:checked ~ table tbody #row-lead-r2 { display: none; }
+#del-lead-r3:checked ~ table tbody #row-lead-r3 { display: none; }
+#del-lead-r4:checked ~ table tbody #row-lead-r4 { display: none; }
+#add-lead-e0:checked ~ table tbody #row-lead-r2 { display: table-row; }
+#add-lead-e1:checked ~ table tbody #row-lead-r3 { display: table-row; }
+#add-lead-e2:checked ~ table tbody #row-lead-r4 { display: table-row; }
+#row-lead-r2 { display: none; }
+#row-lead-r3 { display: none; }
+#row-lead-r4 { display: none; }
+#del-lhost-r0:checked ~ table tbody #row-lhost-r0 { display: none; }
+#del-lhost-r1:checked ~ table tbody #row-lhost-r1 { display: none; }
+#del-lhost-r2:checked ~ table tbody #row-lhost-r2 { display: none; }
+#del-lhost-r3:checked ~ table tbody #row-lhost-r3 { display: none; }
+#del-lhost-r4:checked ~ table tbody #row-lhost-r4 { display: none; }
+#add-lhost-e0:checked ~ table tbody #row-lhost-r2 { display: table-row; }
+#add-lhost-e1:checked ~ table tbody #row-lhost-r3 { display: table-row; }
+#add-lhost-e2:checked ~ table tbody #row-lhost-r4 { display: table-row; }
+#row-lhost-r2 { display: none; }
+#row-lhost-r3 { display: none; }
+#row-lhost-r4 { display: none; }
+#del-host-r0:checked ~ table tbody #row-host-r0 { display: none; }
+#del-host-r1:checked ~ table tbody #row-host-r1 { display: none; }
+#del-host-r2:checked ~ table tbody #row-host-r2 { display: none; }
+#del-host-r3:checked ~ table tbody #row-host-r3 { display: none; }
+#del-host-r4:checked ~ table tbody #row-host-r4 { display: none; }
+#del-host-r5:checked ~ table tbody #row-host-r5 { display: none; }
+#del-host-r6:checked ~ table tbody #row-host-r6 { display: none; }
+#del-host-r7:checked ~ table tbody #row-host-r7 { display: none; }
+#del-host-r8:checked ~ table tbody #row-host-r8 { display: none; }
+#add-host-e0:checked ~ table tbody #row-host-r4 { display: table-row; }
+#add-host-e1:checked ~ table tbody #row-host-r5 { display: table-row; }
+#add-host-e2:checked ~ table tbody #row-host-r6 { display: table-row; }
+#add-host-e3:checked ~ table tbody #row-host-r7 { display: table-row; }
+#add-host-e4:checked ~ table tbody #row-host-r8 { display: table-row; }
+#row-host-r4 { display: none; }
+#row-host-r5 { display: none; }
+#row-host-r6 { display: none; }
+#row-host-r7 { display: none; }
+#row-host-r8 { display: none; }
+#del-server-r0:checked ~ table tbody #row-server-r0 { display: none; }
+#del-server-r1:checked ~ table tbody #row-server-r1 { display: none; }
+#del-server-r2:checked ~ table tbody #row-server-r2 { display: none; }
+#del-server-r3:checked ~ table tbody #row-server-r3 { display: none; }
+#del-server-r4:checked ~ table tbody #row-server-r4 { display: none; }
+#del-server-r5:checked ~ table tbody #row-server-r5 { display: none; }
+#del-server-r6:checked ~ table tbody #row-server-r6 { display: none; }
+#del-server-r7:checked ~ table tbody #row-server-r7 { display: none; }
+#del-server-r8:checked ~ table tbody #row-server-r8 { display: none; }
+#del-server-r9:checked ~ table tbody #row-server-r9 { display: none; }
+#del-server-r10:checked ~ table tbody #row-server-r10 { display: none; }
+#del-server-r11:checked ~ table tbody #row-server-r11 { display: none; }
+#del-server-r12:checked ~ table tbody #row-server-r12 { display: none; }
+#del-server-r13:checked ~ table tbody #row-server-r13 { display: none; }
+#del-server-r14:checked ~ table tbody #row-server-r14 { display: none; }
+#del-server-r15:checked ~ table tbody #row-server-r15 { display: none; }
+#del-server-r16:checked ~ table tbody #row-server-r16 { display: none; }
+#del-server-r17:checked ~ table tbody #row-server-r17 { display: none; }
+#add-server-e0:checked ~ table tbody #row-server-r10 { display: table-row; }
+#add-server-e1:checked ~ table tbody #row-server-r11 { display: table-row; }
+#add-server-e2:checked ~ table tbody #row-server-r12 { display: table-row; }
+#add-server-e3:checked ~ table tbody #row-server-r13 { display: table-row; }
+#add-server-e4:checked ~ table tbody #row-server-r14 { display: table-row; }
+#add-server-e5:checked ~ table tbody #row-server-r15 { display: table-row; }
+#add-server-e6:checked ~ table tbody #row-server-r16 { display: table-row; }
+#add-server-e7:checked ~ table tbody #row-server-r17 { display: table-row; }
+#row-server-r10 { display: none; }
+#row-server-r11 { display: none; }
+#row-server-r12 { display: none; }
+#row-server-r13 { display: none; }
+#row-server-r14 { display: none; }
+#row-server-r15 { display: none; }
+#row-server-r16 { display: none; }
+#row-server-r17 { display: none; }
+#del-bar-r0:checked ~ table tbody #row-bar-r0 { display: none; }
+#del-bar-r1:checked ~ table tbody #row-bar-r1 { display: none; }
+#del-bar-r2:checked ~ table tbody #row-bar-r2 { display: none; }
+#del-bar-r3:checked ~ table tbody #row-bar-r3 { display: none; }
+#del-bar-r4:checked ~ table tbody #row-bar-r4 { display: none; }
+#del-bar-r5:checked ~ table tbody #row-bar-r5 { display: none; }
+#del-bar-r6:checked ~ table tbody #row-bar-r6 { display: none; }
+#del-bar-r7:checked ~ table tbody #row-bar-r7 { display: none; }
+#del-bar-r8:checked ~ table tbody #row-bar-r8 { display: none; }
+#del-bar-r9:checked ~ table tbody #row-bar-r9 { display: none; }
+#del-bar-r10:checked ~ table tbody #row-bar-r10 { display: none; }
+#del-bar-r11:checked ~ table tbody #row-bar-r11 { display: none; }
+#add-bar-e0:checked ~ table tbody #row-bar-r7 { display: table-row; }
+#add-bar-e1:checked ~ table tbody #row-bar-r8 { display: table-row; }
+#add-bar-e2:checked ~ table tbody #row-bar-r9 { display: table-row; }
+#add-bar-e3:checked ~ table tbody #row-bar-r10 { display: table-row; }
+#add-bar-e4:checked ~ table tbody #row-bar-r11 { display: table-row; }
+#row-bar-r7 { display: none; }
+#row-bar-r8 { display: none; }
+#row-bar-r9 { display: none; }
+#row-bar-r10 { display: none; }
+#row-bar-r11 { display: none; }
+#del-bback-r0:checked ~ table tbody #row-bback-r0 { display: none; }
+#del-bback-r1:checked ~ table tbody #row-bback-r1 { display: none; }
+#del-bback-r2:checked ~ table tbody #row-bback-r2 { display: none; }
+#del-bback-r3:checked ~ table tbody #row-bback-r3 { display: none; }
+#del-bback-r4:checked ~ table tbody #row-bback-r4 { display: none; }
+#add-bback-e0:checked ~ table tbody #row-bback-r2 { display: table-row; }
+#add-bback-e1:checked ~ table tbody #row-bback-r3 { display: table-row; }
+#add-bback-e2:checked ~ table tbody #row-bback-r4 { display: table-row; }
+#row-bback-r2 { display: none; }
+#row-bback-r3 { display: none; }
+#row-bback-r4 { display: none; }
+#del-busser-r0:checked ~ table tbody #row-busser-r0 { display: none; }
+#del-busser-r1:checked ~ table tbody #row-busser-r1 { display: none; }
+#del-busser-r2:checked ~ table tbody #row-busser-r2 { display: none; }
+#del-busser-r3:checked ~ table tbody #row-busser-r3 { display: none; }
+#del-busser-r4:checked ~ table tbody #row-busser-r4 { display: none; }
+#del-busser-r5:checked ~ table tbody #row-busser-r5 { display: none; }
+#del-busser-r6:checked ~ table tbody #row-busser-r6 { display: none; }
+#del-busser-r7:checked ~ table tbody #row-busser-r7 { display: none; }
+#add-busser-e0:checked ~ table tbody #row-busser-r4 { display: table-row; }
+#add-busser-e1:checked ~ table tbody #row-busser-r5 { display: table-row; }
+#add-busser-e2:checked ~ table tbody #row-busser-r6 { display: table-row; }
+#add-busser-e3:checked ~ table tbody #row-busser-r7 { display: table-row; }
+#row-busser-r4 { display: none; }
+#row-busser-r5 { display: none; }
+#row-busser-r6 { display: none; }
+#row-busser-r7 { display: none; }
+#del-runner-r0:checked ~ table tbody #row-runner-r0 { display: none; }
+#del-runner-r1:checked ~ table tbody #row-runner-r1 { display: none; }
+#del-runner-r2:checked ~ table tbody #row-runner-r2 { display: none; }
+#del-runner-r3:checked ~ table tbody #row-runner-r3 { display: none; }
+#del-runner-r4:checked ~ table tbody #row-runner-r4 { display: none; }
+#del-runner-r5:checked ~ table tbody #row-runner-r5 { display: none; }
+#del-runner-r6:checked ~ table tbody #row-runner-r6 { display: none; }
+#del-runner-r7:checked ~ table tbody #row-runner-r7 { display: none; }
+#del-runner-r8:checked ~ table tbody #row-runner-r8 { display: none; }
+#del-runner-r9:checked ~ table tbody #row-runner-r9 { display: none; }
+#add-runner-e0:checked ~ table tbody #row-runner-r6 { display: table-row; }
+#add-runner-e1:checked ~ table tbody #row-runner-r7 { display: table-row; }
+#add-runner-e2:checked ~ table tbody #row-runner-r8 { display: table-row; }
+#add-runner-e3:checked ~ table tbody #row-runner-r9 { display: table-row; }
+#row-runner-r6 { display: none; }
+#row-runner-r7 { display: none; }
+#row-runner-r8 { display: none; }
+#row-runner-r9 { display: none; }
+#del-keg-r0:checked ~ table tbody #row-keg-r0 { display: none; }
+#del-keg-r1:checked ~ table tbody #row-keg-r1 { display: none; }
+#del-keg-r2:checked ~ table tbody #row-keg-r2 { display: none; }
+#del-keg-r3:checked ~ table tbody #row-keg-r3 { display: none; }
+#del-keg-r4:checked ~ table tbody #row-keg-r4 { display: none; }
+#del-keg-r5:checked ~ table tbody #row-keg-r5 { display: none; }
+#add-keg-e0:checked ~ table tbody #row-keg-r3 { display: table-row; }
+#add-keg-e1:checked ~ table tbody #row-keg-r4 { display: table-row; }
+#add-keg-e2:checked ~ table tbody #row-keg-r5 { display: table-row; }
+#row-keg-r3 { display: none; }
+#row-keg-r4 { display: none; }
+#row-keg-r5 { display: none; }
+#del-flex-r0:checked ~ table tbody #row-flex-r0 { display: none; }
+#del-flex-r1:checked ~ table tbody #row-flex-r1 { display: none; }
+#del-flex-r2:checked ~ table tbody #row-flex-r2 { display: none; }
+#del-flex-r3:checked ~ table tbody #row-flex-r3 { display: none; }
+#del-flex-r4:checked ~ table tbody #row-flex-r4 { display: none; }
+#del-flex-r5:checked ~ table tbody #row-flex-r5 { display: none; }
+#add-flex-e0:checked ~ table tbody #row-flex-r2 { display: table-row; }
+#add-flex-e1:checked ~ table tbody #row-flex-r3 { display: table-row; }
+#add-flex-e2:checked ~ table tbody #row-flex-r4 { display: table-row; }
+#add-flex-e3:checked ~ table tbody #row-flex-r5 { display: table-row; }
+#row-flex-r2 { display: none; }
+#row-flex-r3 { display: none; }
+#row-flex-r4 { display: none; }
+#row-flex-r5 { display: none; }
+
+/* add-wrap: stack labels, only show the first unchecked one */
+.add-wrap { position: relative; }
+.add-lbl {
+  display: none;
+  width: 100%;
+  text-align: left;
+  padding: 3px 6px;
+  font-size: 9px;
+  color: #aaa;
+  background: none;
+  border: 1px dashed #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 2px 2px;
+  cursor: pointer;
+  user-select: none;
+}
+.add-lbl:hover { color: #555; background: #f5f5f5; }
+
+/* Show only the first add label initially */
+.add-cb:not(:checked) ~ table ~ .add-wrap .add-lbl:first-child { display: block; }
+
+/* When first add-cb is checked, show second label etc */
+.add-cb:nth-of-type(1):checked ~ table ~ .add-wrap .add-lbl:nth-child(2) { display: block; }
+.add-cb:nth-of-type(2):checked ~ table ~ .add-wrap .add-lbl:nth-child(3) { display: block; }
+.add-cb:nth-of-type(3):checked ~ table ~ .add-wrap .add-lbl:nth-child(4) { display: block; }
+.add-cb:nth-of-type(4):checked ~ table ~ .add-wrap .add-lbl:nth-child(5) { display: block; }
+.add-cb:nth-of-type(5):checked ~ table ~ .add-wrap .add-lbl:nth-child(6) { display: block; }
+.add-cb:nth-of-type(6):checked ~ table ~ .add-wrap .add-lbl:nth-child(7) { display: block; }
+.add-cb:nth-of-type(7):checked ~ table ~ .add-wrap .add-lbl:nth-child(8) { display: block; }
+.add-cb:nth-of-type(8):checked ~ table ~ .add-wrap .add-lbl:nth-child(9) { display: block; }
+
+/* toolbar */
 .toolbar {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0.8rem 0 0.6rem;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
+  max-width: 960px; margin: 0 auto;
+  padding: 0.8rem 0 0.5rem;
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
 }
 .toolbar-title { font-size: 13px; font-weight: 700; margin-right: auto; }
 .toolbar input[type="date"] {
@@ -38,27 +250,28 @@ body {
 .btn-print:hover { background: #333; }
 .tip { font-size: 10px; color: #999; }
 
+.save-tip {
+  background: #f0f7ff; border: 1px solid #b8d4f0;
+  border-radius: 6px; padding: 7px 14px;
+  font-size: 10.5px; color: #1a4a7a;
+  max-width: 960px; margin: 0 auto 0.5rem; line-height: 1.7;
+}
+.save-tip strong { color: #0d3a6a; }
+
+/* page */
 .page {
-  max-width: 960px;
-  margin: 0 auto 2rem;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 0.65rem 0.8rem 0.5rem;
+  max-width: 960px; margin: 0 auto 2rem;
+  background: white; border: 1px solid #ccc;
+  border-radius: 6px; padding: 0.65rem 0.8rem 0.5rem;
 }
 
 .page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 2px solid #1a1a1a;
-  padding-bottom: 5px;
-  margin-bottom: 7px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  border-bottom: 2px solid #1a1a1a; padding-bottom: 5px; margin-bottom: 7px;
 }
 .page-title { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; line-height: 1; }
 .page-sub { font-size: 10px; color: #777; margin-top: 1px; }
 .header-right { text-align: right; font-size: 10px; color: #555; line-height: 1.6; }
-.date-display-wrap { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
 .date-label { font-size: 13px; font-weight: 700; color: #1a1a1a; }
 .mod-line input {
   border: none; border-bottom: 1px dashed #bbb;
@@ -67,27 +280,20 @@ body {
 }
 
 .master {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 7px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
 }
 .col-stack { display: flex; flex-direction: column; gap: 5px; }
 
 .section { break-inside: avoid; }
 
 .sec-title {
-  font-size: 8.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  padding: 3px 6px;
-  color: white;
-  border-radius: 2px 2px 0 0;
+  font-size: 8.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.09em;
+  padding: 3px 6px; color: white; border-radius: 2px 2px 0 0;
+  outline: none;
 }
-
-/* editable banner */
-.sec-title[contenteditable="true"] { cursor: text; outline: none; }
-.sec-title[contenteditable="true"]:focus { opacity: 0.8; }
+.sec-title[contenteditable="true"] { cursor: text; }
+.sec-title[contenteditable="true"]:focus { opacity: 0.85; }
 
 .s-mgr    .sec-title { background: #3a3a7a; }
 .s-lead   .sec-title { background: #50508a; }
@@ -102,42 +308,33 @@ body {
 .s-flex   .sec-title { background: #666; }
 
 .sec-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-  border-top: none;
+  width: 100%; border-collapse: collapse;
+  border: 1px solid #ddd; border-top: none;
 }
 .sec-table thead tr { background: #f4f4f4; }
 .sec-table thead th {
-  font-size: 8px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.05em;
-  color: #888; padding: 2px 5px;
+  font-size: 8px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #888; padding: 2px 5px;
   border-bottom: 1px solid #ddd; text-align: left;
 }
 .sec-table thead th.c-break { text-align: center; width: 50px; }
 .sec-table thead th.c-sec   { text-align: center; width: 52px; }
 .sec-table thead th.c-time  { width: 78px; }
-.sec-table thead th.c-del   { width: 20px; }
+.sec-table thead th.c-act   { width: 22px; }
 
-.sec-table tbody tr { display: table-row; }
-.sec-table tbody tr.hidden-row { display: none; }
-
+.sec-table tbody tr:nth-child(even) { background: #f9f9f9; }
 .sec-table td {
-  padding: 2.5px 5px;
-  border-bottom: 1px solid #eee;
-  font-size: 10.5px; color: #1a1a1a;
-  vertical-align: middle;
+  padding: 2.5px 5px; border-bottom: 1px solid #eee;
+  font-size: 10.5px; color: #1a1a1a; vertical-align: middle;
 }
 .sec-table td.c-time { font-size: 9.5px; color: #444; white-space: nowrap; }
 .sec-table td.c-break { padding: 2px 4px; }
-
 .break-box {
   border: 1px dashed #bbb; border-radius: 2px;
-  height: 14px; width: 42px;
-  background: #fffef8; display: block;
+  height: 14px; width: 42px; background: #fffef8; display: block;
 }
-
 .sec-table td.c-sec { font-size: 9.5px; color: #555; font-weight: 600; text-align: center; }
+.sec-table td.c-act { text-align: center; padding: 1px 2px; }
 
 .sec-table td input {
   border: none; background: transparent;
@@ -150,47 +347,15 @@ body {
 .sec-table td.c-sec input { font-size: 9.5px; color: #555; font-weight: 600; text-align: center; }
 .sec-table td.c-sec input::placeholder { color: #ccc; }
 
-/* show/hide rows via checkbox hack */
-.row-toggle { display: none; }
-
-/* delete: label styled as ✕ button */
-.del-label {
-  display: block;
-  cursor: pointer;
-  color: #ddd;
-  font-size: 13px;
-  text-align: center;
-  line-height: 1;
-  user-select: none;
-  border-radius: 3px;
-  padding: 1px 3px;
+.del-lbl {
+  display: block; cursor: pointer; color: #ddd;
+  font-size: 13px; text-align: center; line-height: 1;
+  user-select: none; border-radius: 3px; padding: 1px 3px;
 }
-.del-label:hover { color: #e53935; }
-
-/* when checkbox checked, hide that row */
-.row-toggle:checked + tr { display: none; }
-
-/* add-row reveal: hidden rows shown when add checkbox checked */
-.add-toggle { display: none; }
-.add-label {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 3px 6px;
-  font-size: 9px;
-  color: #aaa;
-  background: none;
-  border: 1px dashed #e0e0e0;
-  border-top: none;
-  border-radius: 0 0 2px 2px;
-  cursor: pointer;
-  user-select: none;
-}
-.add-label:hover { color: #555; background: #f5f5f5; }
+.del-lbl:hover { color: #e53935; }
 
 .page-footer {
-  margin-top: 6px; padding-top: 5px;
-  border-top: 1px solid #ddd;
+  margin-top: 6px; padding-top: 5px; border-top: 1px solid #ddd;
   display: flex; justify-content: space-between;
   align-items: center; font-size: 9.5px; color: #aaa; gap: 10px;
 }
@@ -200,27 +365,12 @@ body {
   color: #666; font-family: inherit; outline: none; width: 260px;
 }
 
-/* save tip box */
-.save-tip {
-  background: #f0f7ff;
-  border: 1px solid #b8d4f0;
-  border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 10.5px;
-  color: #1a4a7a;
-  max-width: 960px;
-  margin: 0 auto 0.6rem;
-  line-height: 1.7;
-}
-.save-tip strong { color: #0d3a6a; }
-
 @media print {
   body { background: white; }
   .toolbar { display: none !important; }
   .save-tip { display: none !important; }
-  .del-label { display: none !important; }
-  .add-label { display: none !important; }
-  .row-toggle:checked + tr { display: none !important; }
+  .del-lbl { display: none !important; }
+  .add-wrap { display: none !important; }
   .page { border: none; border-radius: 0; padding: 0.3rem 0.4rem; margin: 0; max-width: 100%; }
   .sec-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .break-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -233,8 +383,11 @@ body {
 
 <div class="toolbar">
   <span class="toolbar-title">FOH Daily Schedule</span>
-  <span class="tip">Click any field to edit &nbsp;·&nbsp; Use ✕ on each row to hide it &nbsp;·&nbsp; Use "+ add row" to reveal extras</span>
-  <input type="date" id="date-picker" onchange="updateDate()">
+  <span class="tip">Click any field to edit &nbsp;·&nbsp; ✕ to hide a row &nbsp;·&nbsp; "+ add row" to reveal extras</span>
+  <input type="date" id="date-picker" onchange="
+    var d=new Date(this.value+&#39;T00:00:00&#39;);
+    document.getElementById(&#39;date-display&#39;).textContent=d.toLocaleDateString(&#39;en-US&#39;,{weekday:&#39;long&#39;,year:&#39;numeric&#39;,month:&#39;long&#39;,day:&#39;numeric&#39;});
+  ">
   <button class="btn btn-print" onclick="window.print()">⎙ Print</button>
 </div>
 
@@ -249,210 +402,928 @@ body {
       <div class="page-sub">Ballast Point</div>
     </div>
     <div class="header-right">
-      <div class="date-display-wrap">
-        <span class="date-label" id="date-display">Tuesday, June 16, 2026</span>
-      </div>
-      <div class="mod-line">MOD: <input id="mod-input" placeholder="name + contact number"></div>
+      <div class="date-label" id="date-display">Monday, June 15, 2026</div>
+      <div class="mod-line">MOD: <input placeholder="name + contact number"></div>
     </div>
   </div>
 
   <div class="master">
-    <div class="col-stack" id="col-left"><div class="section s-mgr"><div class="sec-title">Manager / GM</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-sec">Role</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-lead"><div class="sec-title">Lead (Manager)</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-lhost"><div class="sec-title">Lead Host</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-host"><div class="sec-title">Host / Hostess</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-server"><div class="sec-title">Server</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-sec">Section</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div></div>
-    <div class="col-stack" id="col-right"><div class="section s-bar"><div class="sec-title">Bartender</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-sec">Station</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-bback"><div class="sec-title">Bar Back</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-busser"><div class="sec-title">Busser</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-runner"><div class="sec-title">Food Runner</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-keg"><div class="sec-title">Draft Maint/Kegs</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div><div class="section s-flex"><div class="sec-title" contenteditable="true" title="Click to rename">Training / Notes</div><table class="sec-table"><thead><tr><th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th><th class="c-sec">Area</th><th class="c-del"></th></tr></thead><tbody><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr><tr style="display: none;"></tr><tr class="hidden-row"><td class="c-name"><input type="text" placeholder="Employee name"></td><td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td><td class="c-break"><span class="break-box"></span></td><td class="c-sec"><input type="text" placeholder="–"></td><td style="text-align: center; padding: 1px 3px;"><span class="del-label" title="Hide this row">✕</span></td></tr></tbody></table><label class="add-label">+ add row</label></div></div>
+    <div class="col-stack">
+  <div class="section s-mgr">
+    <input type="checkbox" id="add-mgr-e0" class="add-cb"><input type="checkbox" id="add-mgr-e1" class="add-cb"><input type="checkbox" id="add-mgr-e2" class="add-cb">
+    <div class="sec-title">Manager / GM</div>
+    <input type="checkbox" id="del-mgr-r0" class="del-cb"><input type="checkbox" id="del-mgr-r1" class="del-cb"><input type="checkbox" id="del-mgr-r2" class="del-cb"><input type="checkbox" id="del-mgr-r3" class="del-cb"><input type="checkbox" id="del-mgr-r4" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        <th class="c-sec">Role</th>
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-mgr-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-mgr-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-mgr-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-mgr-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-mgr-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-mgr-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-mgr-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-mgr-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-mgr-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-mgr-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-mgr-e0" class="add-lbl">+ add row</label><label for="add-mgr-e1" class="add-lbl">+ add row</label><label for="add-mgr-e2" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-lead">
+    <input type="checkbox" id="add-lead-e0" class="add-cb"><input type="checkbox" id="add-lead-e1" class="add-cb"><input type="checkbox" id="add-lead-e2" class="add-cb">
+    <div class="sec-title">Lead (Manager)</div>
+    <input type="checkbox" id="del-lead-r0" class="del-cb"><input type="checkbox" id="del-lead-r1" class="del-cb"><input type="checkbox" id="del-lead-r2" class="del-cb"><input type="checkbox" id="del-lead-r3" class="del-cb"><input type="checkbox" id="del-lead-r4" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-lead-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lead-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lead-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lead-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lead-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lead-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lead-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lead-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lead-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lead-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-lead-e0" class="add-lbl">+ add row</label><label for="add-lead-e1" class="add-lbl">+ add row</label><label for="add-lead-e2" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-lhost">
+    <input type="checkbox" id="add-lhost-e0" class="add-cb"><input type="checkbox" id="add-lhost-e1" class="add-cb"><input type="checkbox" id="add-lhost-e2" class="add-cb">
+    <div class="sec-title">Lead Host</div>
+    <input type="checkbox" id="del-lhost-r0" class="del-cb"><input type="checkbox" id="del-lhost-r1" class="del-cb"><input type="checkbox" id="del-lhost-r2" class="del-cb"><input type="checkbox" id="del-lhost-r3" class="del-cb"><input type="checkbox" id="del-lhost-r4" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-lhost-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lhost-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lhost-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lhost-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lhost-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lhost-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lhost-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lhost-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-lhost-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-lhost-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-lhost-e0" class="add-lbl">+ add row</label><label for="add-lhost-e1" class="add-lbl">+ add row</label><label for="add-lhost-e2" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-host">
+    <input type="checkbox" id="add-host-e0" class="add-cb"><input type="checkbox" id="add-host-e1" class="add-cb"><input type="checkbox" id="add-host-e2" class="add-cb"><input type="checkbox" id="add-host-e3" class="add-cb"><input type="checkbox" id="add-host-e4" class="add-cb">
+    <div class="sec-title">Host / Hostess</div>
+    <input type="checkbox" id="del-host-r0" class="del-cb"><input type="checkbox" id="del-host-r1" class="del-cb"><input type="checkbox" id="del-host-r2" class="del-cb"><input type="checkbox" id="del-host-r3" class="del-cb"><input type="checkbox" id="del-host-r4" class="del-cb"><input type="checkbox" id="del-host-r5" class="del-cb"><input type="checkbox" id="del-host-r6" class="del-cb"><input type="checkbox" id="del-host-r7" class="del-cb"><input type="checkbox" id="del-host-r8" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-host-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r6">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r6" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r7">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r7" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-host-r8">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-host-r8" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-host-e0" class="add-lbl">+ add row</label><label for="add-host-e1" class="add-lbl">+ add row</label><label for="add-host-e2" class="add-lbl">+ add row</label><label for="add-host-e3" class="add-lbl">+ add row</label><label for="add-host-e4" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-server">
+    <input type="checkbox" id="add-server-e0" class="add-cb"><input type="checkbox" id="add-server-e1" class="add-cb"><input type="checkbox" id="add-server-e2" class="add-cb"><input type="checkbox" id="add-server-e3" class="add-cb"><input type="checkbox" id="add-server-e4" class="add-cb"><input type="checkbox" id="add-server-e5" class="add-cb"><input type="checkbox" id="add-server-e6" class="add-cb"><input type="checkbox" id="add-server-e7" class="add-cb">
+    <div class="sec-title">Server</div>
+    <input type="checkbox" id="del-server-r0" class="del-cb"><input type="checkbox" id="del-server-r1" class="del-cb"><input type="checkbox" id="del-server-r2" class="del-cb"><input type="checkbox" id="del-server-r3" class="del-cb"><input type="checkbox" id="del-server-r4" class="del-cb"><input type="checkbox" id="del-server-r5" class="del-cb"><input type="checkbox" id="del-server-r6" class="del-cb"><input type="checkbox" id="del-server-r7" class="del-cb"><input type="checkbox" id="del-server-r8" class="del-cb"><input type="checkbox" id="del-server-r9" class="del-cb"><input type="checkbox" id="del-server-r10" class="del-cb"><input type="checkbox" id="del-server-r11" class="del-cb"><input type="checkbox" id="del-server-r12" class="del-cb"><input type="checkbox" id="del-server-r13" class="del-cb"><input type="checkbox" id="del-server-r14" class="del-cb"><input type="checkbox" id="del-server-r15" class="del-cb"><input type="checkbox" id="del-server-r16" class="del-cb"><input type="checkbox" id="del-server-r17" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        <th class="c-sec">Section</th>
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-server-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r6">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r6" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r7">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r7" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r8">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r8" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r9">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r9" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r10">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r10" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r11">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r11" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r12">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r12" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r13">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r13" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r14">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r14" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r15">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r15" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r16">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r16" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-server-r17">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-server-r17" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-server-e0" class="add-lbl">+ add row</label><label for="add-server-e1" class="add-lbl">+ add row</label><label for="add-server-e2" class="add-lbl">+ add row</label><label for="add-server-e3" class="add-lbl">+ add row</label><label for="add-server-e4" class="add-lbl">+ add row</label><label for="add-server-e5" class="add-lbl">+ add row</label><label for="add-server-e6" class="add-lbl">+ add row</label><label for="add-server-e7" class="add-lbl">+ add row</label></div>
+  </div></div>
+    <div class="col-stack">
+  <div class="section s-bar">
+    <input type="checkbox" id="add-bar-e0" class="add-cb"><input type="checkbox" id="add-bar-e1" class="add-cb"><input type="checkbox" id="add-bar-e2" class="add-cb"><input type="checkbox" id="add-bar-e3" class="add-cb"><input type="checkbox" id="add-bar-e4" class="add-cb">
+    <div class="sec-title">Bartender</div>
+    <input type="checkbox" id="del-bar-r0" class="del-cb"><input type="checkbox" id="del-bar-r1" class="del-cb"><input type="checkbox" id="del-bar-r2" class="del-cb"><input type="checkbox" id="del-bar-r3" class="del-cb"><input type="checkbox" id="del-bar-r4" class="del-cb"><input type="checkbox" id="del-bar-r5" class="del-cb"><input type="checkbox" id="del-bar-r6" class="del-cb"><input type="checkbox" id="del-bar-r7" class="del-cb"><input type="checkbox" id="del-bar-r8" class="del-cb"><input type="checkbox" id="del-bar-r9" class="del-cb"><input type="checkbox" id="del-bar-r10" class="del-cb"><input type="checkbox" id="del-bar-r11" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        <th class="c-sec">Station</th>
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-bar-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r6">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r6" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r7">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r7" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r8">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r8" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r9">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r9" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r10">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r10" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bar-r11">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-bar-r11" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-bar-e0" class="add-lbl">+ add row</label><label for="add-bar-e1" class="add-lbl">+ add row</label><label for="add-bar-e2" class="add-lbl">+ add row</label><label for="add-bar-e3" class="add-lbl">+ add row</label><label for="add-bar-e4" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-bback">
+    <input type="checkbox" id="add-bback-e0" class="add-cb"><input type="checkbox" id="add-bback-e1" class="add-cb"><input type="checkbox" id="add-bback-e2" class="add-cb">
+    <div class="sec-title">Bar Back</div>
+    <input type="checkbox" id="del-bback-r0" class="del-cb"><input type="checkbox" id="del-bback-r1" class="del-cb"><input type="checkbox" id="del-bback-r2" class="del-cb"><input type="checkbox" id="del-bback-r3" class="del-cb"><input type="checkbox" id="del-bback-r4" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-bback-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-bback-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bback-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-bback-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bback-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-bback-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bback-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-bback-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-bback-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-bback-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-bback-e0" class="add-lbl">+ add row</label><label for="add-bback-e1" class="add-lbl">+ add row</label><label for="add-bback-e2" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-busser">
+    <input type="checkbox" id="add-busser-e0" class="add-cb"><input type="checkbox" id="add-busser-e1" class="add-cb"><input type="checkbox" id="add-busser-e2" class="add-cb"><input type="checkbox" id="add-busser-e3" class="add-cb">
+    <div class="sec-title">Busser</div>
+    <input type="checkbox" id="del-busser-r0" class="del-cb"><input type="checkbox" id="del-busser-r1" class="del-cb"><input type="checkbox" id="del-busser-r2" class="del-cb"><input type="checkbox" id="del-busser-r3" class="del-cb"><input type="checkbox" id="del-busser-r4" class="del-cb"><input type="checkbox" id="del-busser-r5" class="del-cb"><input type="checkbox" id="del-busser-r6" class="del-cb"><input type="checkbox" id="del-busser-r7" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-busser-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r6">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r6" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-busser-r7">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-busser-r7" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-busser-e0" class="add-lbl">+ add row</label><label for="add-busser-e1" class="add-lbl">+ add row</label><label for="add-busser-e2" class="add-lbl">+ add row</label><label for="add-busser-e3" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-runner">
+    <input type="checkbox" id="add-runner-e0" class="add-cb"><input type="checkbox" id="add-runner-e1" class="add-cb"><input type="checkbox" id="add-runner-e2" class="add-cb"><input type="checkbox" id="add-runner-e3" class="add-cb">
+    <div class="sec-title">Food Runner</div>
+    <input type="checkbox" id="del-runner-r0" class="del-cb"><input type="checkbox" id="del-runner-r1" class="del-cb"><input type="checkbox" id="del-runner-r2" class="del-cb"><input type="checkbox" id="del-runner-r3" class="del-cb"><input type="checkbox" id="del-runner-r4" class="del-cb"><input type="checkbox" id="del-runner-r5" class="del-cb"><input type="checkbox" id="del-runner-r6" class="del-cb"><input type="checkbox" id="del-runner-r7" class="del-cb"><input type="checkbox" id="del-runner-r8" class="del-cb"><input type="checkbox" id="del-runner-r9" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-runner-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r6">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r6" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r7">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r7" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r8">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r8" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-runner-r9">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-runner-r9" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-runner-e0" class="add-lbl">+ add row</label><label for="add-runner-e1" class="add-lbl">+ add row</label><label for="add-runner-e2" class="add-lbl">+ add row</label><label for="add-runner-e3" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-keg">
+    <input type="checkbox" id="add-keg-e0" class="add-cb"><input type="checkbox" id="add-keg-e1" class="add-cb"><input type="checkbox" id="add-keg-e2" class="add-cb">
+    <div class="sec-title">Draft Maint/Kegs</div>
+    <input type="checkbox" id="del-keg-r0" class="del-cb"><input type="checkbox" id="del-keg-r1" class="del-cb"><input type="checkbox" id="del-keg-r2" class="del-cb"><input type="checkbox" id="del-keg-r3" class="del-cb"><input type="checkbox" id="del-keg-r4" class="del-cb"><input type="checkbox" id="del-keg-r5" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-keg-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-keg-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-keg-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-keg-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-keg-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-keg-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-keg-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-keg-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-keg-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-keg-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-keg-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        
+        <td class="c-act"><label for="del-keg-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-keg-e0" class="add-lbl">+ add row</label><label for="add-keg-e1" class="add-lbl">+ add row</label><label for="add-keg-e2" class="add-lbl">+ add row</label></div>
+  </div>
+
+  <div class="section s-flex">
+    <input type="checkbox" id="add-flex-e0" class="add-cb"><input type="checkbox" id="add-flex-e1" class="add-cb"><input type="checkbox" id="add-flex-e2" class="add-cb"><input type="checkbox" id="add-flex-e3" class="add-cb">
+    <div class="sec-title" contenteditable="true" title="Click to rename this section">Training / Notes</div>
+    <input type="checkbox" id="del-flex-r0" class="del-cb"><input type="checkbox" id="del-flex-r1" class="del-cb"><input type="checkbox" id="del-flex-r2" class="del-cb"><input type="checkbox" id="del-flex-r3" class="del-cb"><input type="checkbox" id="del-flex-r4" class="del-cb"><input type="checkbox" id="del-flex-r5" class="del-cb"><table class="sec-table">
+      <thead><tr>
+        <th>Name</th>
+        <th class="c-time">Shift</th>
+        <th class="c-break">Break</th>
+        <th class="c-sec">Area</th>
+        <th class="c-act"></th>
+      </tr></thead>
+      <tbody>
+      
+      <tr id="row-flex-r0">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-flex-r0" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-flex-r1">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-flex-r1" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-flex-r2">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-flex-r2" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-flex-r3">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-flex-r3" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-flex-r4">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-flex-r4" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      
+      <tr id="row-flex-r5">
+        <td class="c-name"><input type="text" placeholder="Employee name"></td>
+        <td class="c-time"><input type="text" placeholder="e.g. 4p–12a"></td>
+        <td class="c-break"><span class="break-box"></span></td>
+        <td class="c-sec"><input type="text" placeholder="–"></td>
+        <td class="c-act"><label for="del-flex-r5" class="del-lbl" title="Remove row">✕</label></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="add-wrap"><label for="add-flex-e0" class="add-lbl">+ add row</label><label for="add-flex-e1" class="add-lbl">+ add row</label><label for="add-flex-e2" class="add-lbl">+ add row</label><label for="add-flex-e3" class="add-lbl">+ add row</label></div>
+  </div></div>
   </div>
 
   <div class="page-footer">
-    <span id="print-stamp">Printed Jun 15 at 8:13 PM</span>
+    <span>Ballast Point FOH</span>
     <span>Notes / 86'd items: <input placeholder="e.g. 86 salmon, private event patio 7pm"></span>
   </div>
 </div>
 
 <script>
-// Each section defines how many visible rows and how many extra (hidden) rows
-const LEFT = [
-  { id:'mgr',    label:'Manager / GM',     cls:'s-mgr',    hasSec:true,  secLabel:'Role',    rows:2, extra:2,  editable:false },
-  { id:'lead',   label:'Lead (Manager)',    cls:'s-lead',   hasSec:false, secLabel:'',        rows:2, extra:2,  editable:false },
-  { id:'lhost',  label:'Lead Host',         cls:'s-lhost',  hasSec:false, secLabel:'',        rows:2, extra:2,  editable:false },
-  { id:'host',   label:'Host / Hostess',    cls:'s-host',   hasSec:false, secLabel:'',        rows:4, extra:4,  editable:false },
-  { id:'server', label:'Server',            cls:'s-server', hasSec:true,  secLabel:'Section', rows:10,extra:6,  editable:false },
-];
-const RIGHT = [
-  { id:'bar',    label:'Bartender',         cls:'s-bar',    hasSec:true,  secLabel:'Station', rows:7, extra:4,  editable:false },
-  { id:'bback',  label:'Bar Back',          cls:'s-bback',  hasSec:false, secLabel:'',        rows:2, extra:3,  editable:false },
-  { id:'busser', label:'Busser',            cls:'s-busser', hasSec:false, secLabel:'',        rows:4, extra:4,  editable:false },
-  { id:'runner', label:'Food Runner',       cls:'s-runner', hasSec:false, secLabel:'',        rows:6, extra:4,  editable:false },
-  { id:'keg',    label:'Draft Maint/Kegs',  cls:'s-keg',    hasSec:false, secLabel:'',        rows:3, extra:3,  editable:false },
-  { id:'flex',   label:'Training / Notes',  cls:'s-flex',   hasSec:true,  secLabel:'Area',    rows:2, extra:4,  editable:true  },
-];
-
-let toggleId = 0;
-
-function buildSection(sec) {
-  const wrap = document.createElement('div');
-  wrap.className = 'section ' + sec.cls;
-
-  // Title
-  const title = document.createElement('div');
-  title.className = 'sec-title';
-  title.textContent = sec.label;
-  if (sec.editable) {
-    title.contentEditable = 'true';
-    title.title = 'Click to rename';
-  }
-  wrap.appendChild(title);
-
-  // Table
-  const table = document.createElement('table');
-  table.className = 'sec-table';
-
-  // Head
-  const thead = document.createElement('thead');
-  const htr = document.createElement('tr');
-  let headHTML = '<th>Name</th><th class="c-time">Shift</th><th class="c-break">Break</th>';
-  if (sec.hasSec) headHTML += `<th class="c-sec">${sec.secLabel}</th>`;
-  headHTML += '<th class="c-del"></th>';
-  htr.innerHTML = headHTML;
-  thead.appendChild(htr);
-  table.appendChild(thead);
-
-  // Body
-  const tbody = document.createElement('tbody');
-
-  // Visible rows (always shown, can be hidden with ✕)
-  for (let i = 0; i < sec.rows; i++) {
-    const {checkbox, row} = makeRowPair(sec.hasSec, false);
-    tbody.appendChild(checkbox);
-    tbody.appendChild(row);
-  }
-
-  // Extra rows (hidden by default, revealed by add button)
-  const extraCheckboxes = [];
-  for (let i = 0; i < sec.extra; i++) {
-    const {checkbox, row} = makeRowPair(sec.hasSec, true);
-    extraCheckboxes.push(checkbox);
-    tbody.appendChild(checkbox);
-    tbody.appendChild(row);
-  }
-
-  table.appendChild(tbody);
-  wrap.appendChild(table);
-
-  // Add row button — reveals one hidden row at a time
-  let revealIndex = 0;
-  const addLabel = document.createElement('label');
-  addLabel.className = 'add-label';
-  addLabel.textContent = '+ add row';
-  addLabel.addEventListener('click', function(e) {
-    e.preventDefault();
-    // Find next hidden row and show it
-    const hiddenRows = tbody.querySelectorAll('tr.hidden-row');
-    if (hiddenRows.length > 0) {
-      hiddenRows[0].classList.remove('hidden-row');
-    }
-    if (tbody.querySelectorAll('tr.hidden-row').length === 0) {
-      addLabel.style.opacity = '0.3';
-      addLabel.style.cursor = 'default';
-      addLabel.title = 'No more rows available — contact your admin to add more';
-    }
-  });
-  wrap.appendChild(addLabel);
-
-  return wrap;
-}
-
-function makeRowPair(hasSec, hidden) {
-  // We use a simple approach: just a tr, hidden via class
-  // Delete = hide the row
-  const checkbox = document.createElement('tr');
-  checkbox.style.display = 'none'; // spacer, not used visually
-
-  const row = document.createElement('tr');
-  if (hidden) row.classList.add('hidden-row');
-
-  // Name
-  const tdName = document.createElement('td');
-  tdName.className = 'c-name';
-  const nameIn = document.createElement('input');
-  nameIn.type = 'text';
-  nameIn.placeholder = 'Employee name';
-  tdName.appendChild(nameIn);
-  row.appendChild(tdName);
-
-  // Time
-  const tdTime = document.createElement('td');
-  tdTime.className = 'c-time';
-  const timeIn = document.createElement('input');
-  timeIn.type = 'text';
-  timeIn.placeholder = 'e.g. 4p–12a';
-  tdTime.appendChild(timeIn);
-  row.appendChild(tdTime);
-
-  // Break
-  const tdBreak = document.createElement('td');
-  tdBreak.className = 'c-break';
-  const box = document.createElement('span');
-  box.className = 'break-box';
-  tdBreak.appendChild(box);
-  row.appendChild(tdBreak);
-
-  // Section
-  if (hasSec) {
-    const tdSec = document.createElement('td');
-    tdSec.className = 'c-sec';
-    const secIn = document.createElement('input');
-    secIn.type = 'text';
-    secIn.placeholder = '–';
-    tdSec.appendChild(secIn);
-    row.appendChild(tdSec);
-  }
-
-  // Delete (hide this row)
-  const tdDel = document.createElement('td');
-  tdDel.style.textAlign = 'center';
-  tdDel.style.padding = '1px 3px';
-  const delBtn = document.createElement('span');
-  delBtn.className = 'del-label';
-  delBtn.textContent = '✕';
-  delBtn.title = 'Hide this row';
-  delBtn.addEventListener('click', function() {
-    row.classList.add('hidden-row');
-    // Clear its inputs
-    row.querySelectorAll('input').forEach(i => i.value = '');
-  });
-  tdDel.appendChild(delBtn);
-  row.appendChild(tdDel);
-
-  return { checkbox, row };
-}
-
-function updateDate() {
-  const val = document.getElementById('date-picker').value;
-  if (!val) return;
-  const d = new Date(val + 'T00:00:00');
-  document.getElementById('date-display').textContent =
-    d.toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-}
-
-function init() {
-  if (document.getElementById('col-left').hasChildNodes()) return;
-  const left = document.getElementById('col-left');
-  const right = document.getElementById('col-right');
-  LEFT.forEach(sec => left.appendChild(buildSection(sec)));
-  RIGHT.forEach(sec => right.appendChild(buildSection(sec)));
-
-  const d = new Date();
-  const dp = document.getElementById('date-picker');
+// Set today's date on load
+(function(){
+  var dp = document.getElementById('date-picker');
+  var d = new Date();
   dp.value = d.toISOString().split('T')[0];
-  updateDate();
-
-  const now = new Date();
-  document.getElementById('print-stamp').textContent =
-    'Printed ' + now.toLocaleDateString('en-US', { month:'short', day:'numeric' }) +
-    ' at ' + now.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
-}
-
-init();
+  document.getElementById('date-display').textContent =
+    d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+})();
 </script>
-
 
 </body></html>
